@@ -1,0 +1,220 @@
+html {
+    font-size: 16px;
+}
+
+:root {
+    color-scheme: light;
+    --color-fondo: #f3f5f7;
+    --color-panel: #ffffff;
+    --color-texto: #202a35;
+    --color-suave: #65717e;
+    --color-borde: #d9e0e6;
+    --color-acento: #287c78;
+    --color-acento-hover: #216763;
+    --color-error: #d64c4c;
+    --color-victoria: #319568;
+    --sombra-panel: 0 0.5rem 1.5rem rgb(28 43 56 / 7%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 3rem 1.25rem;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.encabezado {
+    text-align: center;
+}
+
+.etiqueta-superior {
+    margin: 0 0 0.5rem;
+    color: var(--color-acento);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: -0.035em;
+}
+
+.introduccion,
+.descripcion {
+    margin-bottom: 0;
+    color: var(--color-suave);
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.875rem;
+    background: var(--color-panel);
+    box-shadow: var(--sombra-panel);
+}
+
+.panel h2 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+}
+
+.panel .descripcion {
+    margin-bottom: 1.25rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.5rem;
+    background: #fcfdfd;
+    color: var(--color-texto);
+    font: inherit;
+    line-height: 1.6;
+    resize: none;
+    overflow: auto;
+}
+
+#texto {
+    height: 8rem;
+}
+
+button {
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 0.45rem;
+    background: var(--color-acento);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+button:hover {
+    background: var(--color-acento-hover);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgb(40 124 120 / 25%);
+    outline-offset: 2px;
+}
+
+.texto-objetivo {
+    min-height: 3.25rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--color-acento);
+    border-radius: 0.25rem;
+    background: #f3f8f7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.area-juego {
+    height: 10rem;
+    border: 0.2rem solid var(--color-borde);
+    border-bottom-width: 0.65rem;
+    border-radius: 0.55rem;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.area-juego.error {
+    border-color: var(--color-error);
+}
+
+.area-juego.victoria {
+    border-color: var(--color-victoria);
+    background: #f3faf6;
+}
+
+.area-juego:disabled {
+    opacity: 1;
+    color: var(--color-texto);
+}
+#felicitacion {
+    display: none;
+    margin: 1.25rem 0 0;
+    padding: 1rem 1.25rem;
+    color: #26734b;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 0.25rem 0.75rem rgb(49 149 104 / 10%);
+}
+
+#felicitacion::before {
+    content: "✓";
+    display: inline-grid;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-victoria);
+    color: #ffffff;
+    font-size: 0.9rem;
+    vertical-align: -0.1rem;
+}
+
+@media (max-width: 36rem) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    .panel {
+        padding: 1.25rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}

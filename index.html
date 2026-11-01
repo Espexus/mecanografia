@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mecanografía</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1>Mecanografía juego</h1>
+    <main class="contenedor">
+        <header class="encabezado">
+            <p class="etiqueta-superior">PRÁCTICA DE ESCRITURA</p>
+            <h1>Juego de mecanografía</h1>
+        </header>
 
-    <form action="" id="formulario">
-        <textarea name="texto" id=""></textarea>
-        <input type="submit" value="Enviar">
-    </form>
+        <section class="panel panel-configuracion" aria-labelledby="titulo-texto">
+            <p class="descripcion">Escribe aquí el texto que usarás en la partida.</p>
+            <form action="" id="formulario">
+                <label for="texto">Texto que quieres practicar</label>
+                <textarea name="texto" id="texto" placeholder="Tres tristes tigres comían trigo en un trigal."></textarea>
+                <button type="submit">Guardar texto para jugar</button>
+            </form>
+        </section>
 
-    <p id="texto-objetivo">
+        <section class="panel panel-juego" aria-labelledby="titulo-partida">
+            <h2 id="titulo-partida">Escribe el texto</h2>
+            <p class="descripcion">Sigue el texto de referencia y escribelo igualito.</p>
+            <p id="texto-objetivo" class="texto-objetivo"></p>
+            <label for="espacio-texto">Tu respuesta</label>
+            <textarea id="espacio-texto" class="area-juego" placeholder="Empieza a escribir aquí cuando estés listo..." spellcheck="false"></textarea>
 
-    </p>
-
-    <textarea id="espacio-texto"></textarea>
+            <p id="felicitacion">Ganaste!!!</p>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
